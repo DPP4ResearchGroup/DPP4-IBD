@@ -58,7 +58,7 @@ d<-dist(NonIBD$DPP2, method = "euclidean")
 fitDPP2 <- hclust(d, method="ward.D")
 plot(fitDPP2, main="NonIBD DPP2 Clustering")
 
-# NewNonIDB 
+# NewNonIDB and Analysis based on clustering data cleaning 
 NewNonIBD=data.frame(as.numeric(NonIBDnew$DPP4), stringsAsFactors=FALSE)
 NewNonIBD[,2]<-data.frame(as.numeric(NonIBDnew$FAP), stringsAsFactors=FALSE)
 NewNonIBD[,3]<-data.frame(as.numeric(NonIBDnew$DPP8), stringsAsFactors=FALSE)
