@@ -57,3 +57,20 @@ plot(fitDPP9, main="NonIBD DPP9 Clustering")
 d<-dist(NonIBD$DPP2, method = "euclidean")
 fitDPP2 <- hclust(d, method="ward.D")
 plot(fitDPP2, main="NonIBD DPP2 Clustering")
+
+# NewNonIDB 
+NewNonIBD=data.frame(as.numeric(NonIBDnew$DPP4), stringsAsFactors=FALSE)
+NewNonIBD[,2]<-data.frame(as.numeric(NonIBDnew$FAP), stringsAsFactors=FALSE)
+NewNonIBD[,3]<-data.frame(as.numeric(NonIBDnew$DPP8), stringsAsFactors=FALSE)
+NewNonIBD[,4]<-data.frame(as.numeric(NonIBDnew$DPP9), stringsAsFactors=FALSE)
+NewNonIBD[,5]<-data.frame(as.numeric(NonIBDnew$DPP2), stringsAsFactors=FALSE)
+# Invalid point removal based on clustering 
+NewNonIBD[,2][7]<-NA
+NewNonIBD[,4][4]<-NA
+NewNonIBD[,4][5]<-NA
+NewNonIBD[,5][6]<-NA
+NewNonIBD[,5][7]<-NA
+# Col names
+colnames(NewNonIBD)<-colnames(NonIBD)
+boxplot(NewNonIBD)
+
